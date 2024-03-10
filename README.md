@@ -1,6 +1,6 @@
 PConPy
 ======
-## This is a copy of the PConPy. However, the raw version has many issues. I changed it.
+## This is a copy of the PConPy. However, the raw version has many issues. I changed it. If useful for you, add a star, please.
 
 ## Overview
 
