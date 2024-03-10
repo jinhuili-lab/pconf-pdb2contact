@@ -2,9 +2,9 @@ PConPy
 ======
 ## This is a copy of the PConPy. However, the raw version has many issues. I changed it. If useful for you, add a star, please.
 ```
-DSSP executable is not available in the provided ftp server. But I can get it using conda install -c salilab dssp, and the command is mkdssp instead of dssp.
-from Bio._py3k import StringIO should be removed in python3. Without StringIO, the output can be read as str instead of file.
-without chain_ids defined residues = get_residues(opts["--pdb"], chain_ids=chain_ids) will throw an error. Just add chain_ids=None.
+1. DSSP executable is not available in the provided ftp server. But I can get it using conda install -c salilab dssp, and the command is mkdssp instead of dssp.
+2. from Bio._py3k import StringIO should be removed in python3. Without StringIO, the output can be read as str instead of file.
+3. without chain_ids defined residues = get_residues(opts["--pdb"], chain_ids=chain_ids) will throw an error. Just add chain_ids=None.
 ```
 ## Overview
 
