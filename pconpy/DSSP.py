@@ -47,7 +47,7 @@ The DSSP codes for secondary structure used here are:
 __docformat__ = "restructuredtext en"
 
 import re
-from Bio._py3k import StringIO
+#from Bio._py3k import StringIO
 import subprocess
 
 from Bio.Data import SCOPData
@@ -129,7 +129,7 @@ def dssp_dict_from_pdb_file(in_file, DSSP="dssp"):
     p = subprocess.Popen([DSSP, in_file], universal_newlines=True,
                          stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     out, err = p.communicate()
-    out_dict, keys = _make_dssp_dict(StringIO(out))
+    out_dict, keys = _make_dssp_dict(str(out)))
     return out_dict, keys
 
 
@@ -158,8 +158,8 @@ def _make_dssp_dict(handle):
     dssp = {}
     start = 0
     keys = []
-    for l in handle.readlines():
-        sl = l.split()
+    for l in handle.split():
+        sl = l
         if len(sl) < 2:
             continue
         if sl[1] == "RESIDUE":
