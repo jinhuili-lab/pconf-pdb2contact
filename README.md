@@ -1,14 +1,15 @@
 PConPy
 ======
 ## This is a copy of the PConPy. However, the raw version has many issues. I changed it. If useful for you, add a star, please.
-
+```
+DSSP executable is not available in the provided ftp server. But I can get it using conda install -c salilab dssp, and the command is mkdssp instead of dssp.
+from Bio._py3k import StringIO should be removed in python3. Without StringIO, the output can be read as str instead of file.
+without chain_ids defined residues = get_residues(opts["--pdb"], chain_ids=chain_ids) will throw an error. Just add chain_ids=None.
+```
 ## Overview
 
 ![1ubq CA-CA distance map](images/1ubq-dmap-CA.png)
 ![1ubq CA-CA contact map](images/1ubq-cmap-CA.png)
-
-This is the official repository for the redevelopment of PConPy. The original
-(now obsolete) source code associated with the article is accessible from the [`legacy`](https://github.com/kianho/pconpy/tree/legacy) branch of this repository.
 
 ## About
 
