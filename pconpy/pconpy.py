@@ -81,7 +81,7 @@ DSSP can be downloaded from:
 """
 
 # Check if DSSP is installed
-if not spawn.find_executable("dssp"):
+if not spawn.find_executable("mkdssp"):
     sys.stderr.write(DSSP_MISSING_MSG)
     sys.exit(1)
 
@@ -563,7 +563,7 @@ if __name__ == '__main__':
     else:
         measure = opts["--measure"]
 
-    residues = get_residues(opts["--pdb"], chain_ids=chain_ids)
+    residues = get_residues(opts["--pdb"], chain_ids=None)
 
     #
     # Generate the underlying 2D matrix for the selected plot.
