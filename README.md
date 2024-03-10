@@ -1,5 +1,6 @@
 PConPy
 ======
+## This is a copy of the PConPy. However, the raw version has many issues. I changed it.
 
 ## Overview
 
@@ -21,19 +22,11 @@ knowledge discovery or machine learning tasks. PConPy generates
 publication-quality renderings of contact maps, and the related distance- and
 hydrogen bond maps.
 
-## Publication
-
-Please consider citing our paper if you found PConPy to be useful in your research:
-
-- H. K. Ho, M. Kuiper and K. Ramamohanarao, "PConPy—a Python module for generating 2D
-  protein maps", _Bioinformatics_, vol. 24, no. 24, pp. 2934-2935, 2008.
-  [[article](http://dx.doi.org/10.1093/bioinformatics/btn566)]
-
 ## Installation
 
 ### Dependencies
 
-PConPy was developed using Python 2.7 using the following libraries:
+PConPy was developed using **Python 3** using the following libraries:
 - NumPy
 - BioPython
 - Matplotlib
@@ -46,6 +39,7 @@ sudo apt-get install python-numpy python-biopython python-matplotlib python-doco
 or via the [Anaconda Python Distribution](http://continuum.io/downloads):
 ```
 conda install numpy biopython matplotlib pip
+conda install -c salilab dssp
 pip install docopt
 ```
 
@@ -56,8 +50,13 @@ inter-residue hydrogen bond information. The DSSP executable needs to be
 installed into your system path and renamed to `dssp`, it can be
 downloaded from:
 
-- ftp://ftp.cmbi.ru.nl/pub/software/dssp/
-
+- https://anaconda.org/ostrokach/dssp/2.2.1/download/linux-64/dssp-2.2.1-1.tar.bz2
+```
+wget https://anaconda.org/ostrokach/dssp/2.2.1/download/linux-64/dssp-2.2.1-1.tar.bz2
+tar -jxvf dssp-2.2.1-1.tar.bz2
+# add env variable manually
+# for example: alias dssp='/home/jinhui/software/pconpy/bin/mkdssp'
+```
 
 ## Example usage
 Generate a PDF contact map using the CA-CA distance measure:
@@ -76,26 +75,3 @@ python ./pconpy/pconpy.py hbmap --pdb ./tests/pdb_files/1ubq.pdb \
           --chains A --plaintext --output 1ubq.txt
 ```
 
-## Who's using PConPy?
-
-- B. Konopka, M. Ciombor, M. Kurczynska and M. Kotulska, "Automated
-  Procedure for Contact-Map-Based Protein Structure Reconstruction", The
-  Journal of Membrane Biology, vol. 247, no. 5, pp. 409-420, 2014.
-  [[article](http://dx.doi.org/10.1186/1471-2105-10-153)]
-
-- A. Stivala, A. Wirth and P. Stuckey, Tableau-based protein
-  substructure search using quadratic programming, BMC Bioinformatics, vol.
-  10, no. 1, p. 153, 2009.
-  [[article](http://dx.doi.org/10.1007/s00232-014-9648-x)]
-
-
-## Useful links
-
-- Peter Cock's (@peterjc) [tutorial](http://goo.gl/q7DNt7) covers the
-  basics of PDB file parsing and visualisation using the powerful
-  [Biopython](http://biopython.org) library.
-
-
-## Contributors
-
-See [CONTRIBUTORS.md](CONTRIBUTORS.md)
