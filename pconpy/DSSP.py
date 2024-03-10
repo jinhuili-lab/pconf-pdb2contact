@@ -102,7 +102,7 @@ def ss_to_index(ss):
     assert 0
 
 
-def dssp_dict_from_pdb_file(in_file, DSSP="dssp"):
+def dssp_dict_from_pdb_file(in_file, DSSP="mkdssp"):
     """
     Create a DSSP dictionary from a PDB file.
 
@@ -251,7 +251,7 @@ class DSSP(AbstractResiduePropertyMap):
     -42.399999999999999)
     """
 
-    def __init__(self, model, pdb_file, dssp="dssp"):
+    def __init__(self, model, pdb_file, dssp="mkdssp"):
         """
         ::
 
