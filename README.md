@@ -56,7 +56,8 @@ downloaded from:
 wget https://anaconda.org/ostrokach/dssp/2.2.1/download/linux-64/dssp-2.2.1-1.tar.bz2
 tar -jxvf dssp-2.2.1-1.tar.bz2
 # add env variable manually
-# for example: alias dssp='/home/jinhui/software/pconpy/bin/mkdssp'
+# for example:
+alias dssp='/home/jinhui/software/pconpy/bin/mkdssp'
 ```
 
 ## Example usage
