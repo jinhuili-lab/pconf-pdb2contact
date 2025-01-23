@@ -39,6 +39,7 @@ sudo apt-get install python-numpy python-biopython python-matplotlib python-doco
 ```  
 or via the [Anaconda Python Distribution](http://continuum.io/downloads):
 ```
+conda create -n pdb2contact python=3.6
 conda install numpy biopython matplotlib pip
 conda install -c salilab dssp
 pip install docopt
@@ -57,23 +58,23 @@ wget https://anaconda.org/ostrokach/dssp/2.2.1/download/linux-64/dssp-2.2.1-1.ta
 tar -jxvf dssp-2.2.1-1.tar.bz2
 # add env variable manually
 # for example:
-alias dssp='/home/jinhui/software/pconpy/bin/mkdssp'
+alias dssp='/home/jinhui/software/pconpy/bin/mkdssp'  #change it to your path
 ```
 
 ## Example usage
 Generate a PDF contact map using the CA-CA distance measure:
 ```
-python ./pconpy/pconpy.py cmap 8.0 --pdb ./tests/pdb_files/1ubq.pdb \
+python pconpy.py cmap 8.0 --pdb ./tests/pdb_files/1ubq.pdb \
           --chains A --output 1ubqA_cmap.pdf --measure CA 
 ```
 Generate a PNG distance map using the min. VDW distance measure:
 ```
-python ./pconpy/pconpy.py dmap --pdb ./tests/pdb_files/3erd.pdb \
+python  pconpy.py dmap --pdb ./tests/pdb_files/3erd.pdb \
           --chains B,C --output 3erdBC_dmap.png --measure minvdw
 ```
 Generate a plain-text [hydrogen bond matrix](http://en.wikipedia.org/wiki/Protein_contact_map#HB_Plot):
 ```
-python ./pconpy/pconpy.py hbmap --pdb ./tests/pdb_files/1ubq.pdb \
+python pconpy.py hbmap --pdb ./tests/pdb_files/1ubq.pdb \
           --chains A --plaintext --output 1ubq.txt
 ```
 
