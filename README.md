@@ -61,6 +61,53 @@ tar -jxvf dssp-2.2.1-1.tar.bz2
 alias dssp='/home/jinhui/software/pconpy/bin/mkdssp'  #change it to your path
 ```
 
+## Usage
+```
+Usage:
+    pconpy.py cmap <dist> -p <pdb> -o <file> [options]
+    pconpy.py dmap -p <pdb> -o <file> [options]
+    pconpy.py hbmap -p <pdb> -o <file> [options]
+
+Options:
+    -p, --pdb <pdb>             The PDB file.
+    -c, --chains <chain-ids>    Comma-separated list of chain identifiers
+                                (defaults to the first chain).
+    -o, --output <file>         Save the plot to a file. The file format is
+                                determined by the file extension.
+    -m, --measure <measure>     The inter-residue distance measure [default: CA].
+    -M, --mask-thresh <dist>    Hide the distances below a given threshold (in
+                                angstroms).
+    --plaintext                 Generate a plaintext distance/contact matrix
+                                and write to stdout (recommended for
+                                piping into other CLI programs).
+    --asymmetric                Display the plot only in the upper-triangle.
+
+    --title TITLE               The title of the plot (optional).
+    --xlabel <label>            X-axis label [default: Residue index].
+    --ylabel <label>            Y-axis label [default: Residue index].
+
+    --font-family <font>        Font family (via matplotlib) [default: sans].
+    --font-size <size>          Font size in points [default: 10].
+
+    --width-inches <width>      Width of the plot in inches [default: 6.0].
+    --height-inches <height>    Height of the plot in inches [default: 6.0].
+    --dpi <dpi>                 Set the plot DPI [default: 80]
+
+    --greyscale                 Generate a greyscale distance map.
+    --no-colorbar               Hide the color bar on distance maps.
+    --transparent               Set the background to transparent.
+    --show-frame
+
+    -v, --verbose               Verbose mode.
+
+Distance measures:
+    "CA" -- Conventional CA-CA distance, this is the default distance measure.
+    "CB" -- The CB-CB distance.
+    "cmass" -- The distance between the residue centers of mass.
+    "sccmass" -- The distance between the sidechain centers of mass
+    "minvdw" -- The minimum distance between the VDW radii of each residue.
+
+```
 ## Example usage
 Generate a PDF contact map using the CA-CA distance measure:
 ```
