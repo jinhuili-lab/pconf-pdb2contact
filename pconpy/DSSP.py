@@ -129,7 +129,7 @@ def dssp_dict_from_pdb_file(in_file, DSSP="mkdssp"):
     p = subprocess.Popen([DSSP, in_file], universal_newlines=True,
                          stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     out, err = p.communicate()
-    out_dict, keys = _make_dssp_dict(str(out)))
+    out_dict, keys = _make_dssp_dict(str(out))
     return out_dict, keys
 
 
