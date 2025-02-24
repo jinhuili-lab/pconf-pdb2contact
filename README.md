@@ -1,6 +1,6 @@
 PConPy/PDB2ContactMap
 ======
-## Update: 2025, the code is rabish. I abandan it and create a new, refer: https://github.com/jinhuili-lab/pdb2contact
+## Update: 2025, the previous code is rubbish. I abandan it and create a new, refer: https://github.com/jinhuili-lab/pdb2contact
 ## This is a copy of the PConPy. However, the raw version has many issues. I changed it. If useful for you, add a star, please.
 ```
 1. DSSP executable is not available in the provided ftp server. But I can get it using conda install -c salilab dssp, and the command is mkdssp instead of dssp.
